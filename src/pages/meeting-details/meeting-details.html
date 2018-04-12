@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf='selectedMeeting'>{{selectedMeeting.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngIf='selectedMeeting'>
+        <ion-item>
+            <ion-icon item-start name="calendar"></ion-icon>
+            <h2>{{ selectedMeeting.title }}</h2>
+            <p>{{ selectedMeeting.startsAt }}</p>
+            <h2 item-end style='color: #007acc'>{{ selectedMeeting.durationInMinutes + ' mins' }}</h2>
+          </ion-item>
+          
+          <ion-card-content>
+            <p>{{ selectedMeeting.description }}</p>
+          </ion-card-content>
+    
+          <ion-row>
+            <ion-col col-6>
+              <button ion-button icon-left clear small>
+                <ion-icon name="thumbs-up"></ion-icon>
+                <div>Join</div>
+              </button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button icon-left clear small color="danger">
+                <ion-icon name="thumbs-down"></ion-icon>
+                <div>Defer</div>
+              </button>
+            </ion-col>
+          </ion-row>
+  </ion-card>
+</ion-content>
