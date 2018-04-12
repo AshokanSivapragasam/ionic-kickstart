@@ -4,9 +4,14 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ListPage } from '../pages/list/list';
+import { TamilNewMoviesPage } from '../pages/tamil-new-movies/tamil-new-movies';
+import { EnglishNewMoviesPage } from '../pages/english-new-movies/english-new-movies';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { MeetingPlannerPage } from '../pages/meeting-planner/meeting-planner';
+import { MusicZunePlayerPage } from '../pages/music-zune-player/music-zune-player';
+import { MusicZuneHomePage } from '../pages/music-zune-home/music-zune-home';
 
 
 @Component({
@@ -16,7 +21,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage = HelloIonicPage;
+  rootPage = MusicZuneHomePage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -30,7 +35,11 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'Tamil New Movies', component: TamilNewMoviesPage },
+      { title: 'English New Movies', component: EnglishNewMoviesPage },
+      { title: 'My First List', component: ListPage },
+      { title: 'Meeting Planner', component: MeetingPlannerPage },
+      { title: 'Music Zune Player', component: MusicZuneHomePage }
     ];
   }
 
